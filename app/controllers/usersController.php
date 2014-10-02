@@ -42,7 +42,7 @@ if ( isset($_POST['createUser']) )
 		header('location: ../createUser.php?msg='.$msg);	
 	}
 
-	$msg = urlencode('Gebruiker <b>' . $username . '</b> is succesvol toegevoegd.');
+	$msg = urlencode('User ' . $username . ' is succesfully created.');
 	header ('location: ../createUser.php?msg='.$msg);
 }
 

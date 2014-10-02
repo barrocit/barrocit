@@ -1,11 +1,19 @@
-<?php require 'templates/header.php'; ?>
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PHP Series | Login en sessies</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+		<div class="top">Barroc-IT</div>
+			<div class="login">
+					<p>Hier mag je alleen komen als je ingelogd bent.</p>
 
-<div class="container">
-	<p>hier mag je niet komen als je niet ingelogd bent en de rol als admin hebt...</p>
-
-	<form method="post" action="controllers/usersController.php" role="form" class="users-form col-md-8 col-md-offset-2">
-		<fieldset>
-		<legend>Creëer gebruiker</legend>
+	<form method="post" action="controllers/usersController.php" role="form">
+		
+		<h2>Creëer gebruiker</h2>
 			
 			<ul>
 			<?php  
@@ -16,31 +24,25 @@
 			?>
 			</ul>
 
-			<div class="form-group col-md-5">
+			
 				<label for="voornaam">Voornaam</label>
 				<input type="voornaam" name="voornaam" id="voornaam" class="form-control">	
-			</div>
-			<div class="form-group col-md-2">
+			
 				<label for="tussenvoegsel">Tussenvoegsel</label>
 				<input type="tussenvoegsel" name="tussenvoegsel" id="tussenvoegsel" class="form-control">	
-			</div>
-			<div class="form-group col-md-5">
+			
 				<label for="achternaam">Achternaam</label>
 				<input type="achternaam" name="achternaam" id="achternaam" class="form-control">	
-			</div>
-			<div class="form-group col-md-6">
+			
 				<label for="username">Username</label>
 				<input type="username" name="username" id="username" class="form-control">	
-			</div>
-			<div class="form-group col-md-6">
+			
 				<label for="email">Email</label>
 				<input type="email" name="email" id="email" class="form-control">	
-			</div>
-			<div class="form-group col-md-6">
+			
 				<label for="password">Password</label>
 				<input type="password" name="password" id="password" class="form-control">
-			</div>
-			<div class="form-group col-md-6">
+			
 				<label for="rol">Gebruikersrol</label>
 				<select name="rol" id="rol" class="form-control">
 					<option value=""></option>
@@ -50,12 +52,14 @@
 					<option value="4">IT</option>
 					<option value="5">Administrator</option>
 				</select>
-			</div>
-			<div class="form-group col-md-12">
+			
+			
 				<input type="submit" value="Maak gebruiker aan" name="createUser" class="btn btn-large">
-			</div>
-		</fieldset>
+			
+		
 	</form>
-</div>
-
-<?php require 'templates/footer.php'; ?>
+			</div>
+		</div>	
+	<div class="footer">&copy; Barroc-IT 2014</div>	
+</body>
+</html>

@@ -11,21 +11,23 @@
 			<div class="login">
 				<form method="post" action="controllers/authController.php" role="form">
 					<h2>Inloggen</h2>
-						<ul>
-							<?php  
-							// succes of fail message
-							if (isset($_GET['msg'])) {
-							echo '<li>' .  htmlspecialchars($_GET['msg']) . '</li>';
-							}
-							?>
-						</ul>
-						<div class="width-tabel"><label for="email">Email</label></div>
-						<input type="email" name="email" id="email" class="form-control">
-				
-						<div class="width-tabel"><label for="password">Password</label></div>
-						<input type="password" name="password" id="password" class="form-control">
 
-						<input type="submit" name="authUser" value="Login" class="btn btn-large">
+					<ul>
+					<?php  
+					// succes of fail message
+					if (isset($_GET['msg'])) {
+					echo '<li>' .  htmlspecialchars($_GET['msg']) . '</li>';
+					}
+					?>
+					</ul>
+					
+					<div class="width-tabel"><label for="email">Email</label></div>
+					<input type="email" name="email" id="email" class="form-control">
+				
+					<div class="width-tabel"><label for="password">Password</label></div>
+					<input type="password" name="password" id="password" class="form-control">
+
+					<input type="submit" name="authUser" value="Login" class="btn btn-large">
 				</form>
 			</div>
 		</div>	

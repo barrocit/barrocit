@@ -8,7 +8,7 @@
 </head>
 <body>
 		<div class="top">Barroc-IT</div>
-			<div class="login">
+			<div class="div1">
 				<form method="post" action="controllers/authController.php" role="form">
 					<h2>Inloggen</h2>
 

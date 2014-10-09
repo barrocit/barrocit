@@ -9,7 +9,7 @@ if ( isset($_POST['authUser'])){
     $sql = "SELECT name, password, gebruikersrol FROM users WHERE name = '$name' AND password = '$password'";
 
     if(! $query = mysqli_query($con, $sql)){
-        trigger_error('check de sql op fouten');
+        trigger_error('SQL CHECK!!!');
     }
 
     if(mysqli_num_rows($query) == 1){
@@ -22,7 +22,7 @@ if ( isset($_POST['authUser'])){
     }
     else{
 
-            $msg = urlencode('Gebruikersnaam of wachtwoord onjuist');
+            $msg = urlencode('Username or password is incorrect.');
             header('location: ../login.php?msg=' . $msg );
         }
 }
@@ -30,6 +30,6 @@ if ( isset($_POST['authUser'])){
 //handelt de uitlog af 
 if (isset($_GET['logout'])) {
     session_destroy();
-    $msg = urlencode("u bent succelsvol uitgelogd");
+    $msg = urlencode("U are succesfully logged out.");
     header('location:../login.php?msg='. $msg );    
 }

@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Barroc-IT | Inloggen</title>
+	<title>Barroc-IT | Login</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 		<div class="top">Barroc-IT</div>
 			<div class="div1">
 				<form method="post" action="controllers/authController.php" role="form">
-					<h2>Inloggen</h2>
+					<h2>Login</h2>
 
 					<ul>
 					<?php  
@@ -22,12 +22,12 @@
 					</ul>
 					
 					<div class="width-tabel"><label for="email">Email</label></div>
-					<input type="email" name="email" id="email" class="form-control">
+					<input type="name" name="name" id="name" class="form-control">
 				
 					<div class="width-tabel"><label for="password">Password</label></div>
 					<input type="password" name="password" id="password" class="form-control">
 
-					<input type="submit" name="authUser" value="Login" class="btn btn-large">
+					<input type="submit" name="authUser" value="Enter" class="btn btn-large">
 				</form>
 			</div>
 		</div>	

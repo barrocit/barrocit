@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 if ( ! isset($_SESSION['name']) ) {
 	$msg = urlencode('U dient ingelogd te zijn');

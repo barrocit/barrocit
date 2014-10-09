@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 require '../../config/config.php';
 
@@ -16,7 +17,7 @@ if ( isset($_POST['authUser'])){
         $row = mysqli_fetch_assoc($query);
 
              $_SESSION['name'] = $row['name'];
-            $_SESSION['role'] = $row['gebruikersrol'];
+            $_SESSION['gebruikersrol'] = $row['gebruikersrol'];
             header('location:../index.php');
       
     }

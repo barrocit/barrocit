@@ -5,7 +5,7 @@ if ( ! isset($_SESSION['name']) ) {
 	header('location: login.php?msg=' . $msg);
 }
 
-$role = $_SESSION['role'];
+$role = $_SESSION['gebruikersrol'];
 
 switch($role) {
 	case 1:

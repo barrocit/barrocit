@@ -9,9 +9,8 @@
 		<h1>Sales</h1>
 	</header>
 </head>
-
 <body>
-
+<div class="container">
 <div class="navbar navbar-default">
   <div class="navbar-header">
     <a class="navbar-brand" href="#">Home</a>
@@ -31,6 +30,7 @@
                             <td class="col-sm-1"><strong>Action</strong></td>
                         </tr>
                     </thead>
+</div>
 </body>
 <footer>
 

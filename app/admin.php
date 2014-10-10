@@ -39,7 +39,8 @@
 							<option value="3">Sales</option>
 						</select>
 					
-						<input type="submit" value="Create User" name="createUser">
+						<div class="width-tabel"></div>
+						<input type="submit" value="Create User" name="createUser" id="button">
 					</form>
 			</div>	
 			<?php  

@@ -19,7 +19,7 @@
 					<input type="password" name="password" id="password" class="form-control">
 					
 					<div class="width-tabel"></div>
-					<input type="submit" name="authUser" value="Enter" class="btn btn-large">
+					<input type="submit" name="authUser" value="Enter" class="btn btn-large" id="button">
 				</form>
 			</div>
 		<?php  

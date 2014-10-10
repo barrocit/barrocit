@@ -17,6 +17,7 @@ body {
 	text-align: center;
 	font-size: 32px;
 	position: fixed;
+	display: inline;
 }
 
 .div1 {
@@ -63,4 +64,38 @@ h2 {
 	position: fixed;
 	bottom: 0px;
 	padding-left: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+#name, #password {
+	width: 187px;
+	padding: 0;
+	height: 25px;
+	margin: 2px;
+	border: 1px solid black;
+	padding-left: 3px;
+}
+
+#gebruikersrol {
+	width: 192px;
+	padding: 0px;
+	height: 25px;
+	margin: 2px;
+	border: 1px solid black;
+}
+
+#button {
+	width: 192px;
+	border: 1px solid black;
+	margin: 2px;
+	font-weight: bold;
+	height: 25px;
 }

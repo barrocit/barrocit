@@ -19,7 +19,7 @@ body {
 	position: fixed;
 }
 
-.login {
+.div1 {
 	width: 300px;
 	height: auto;
 	border: 1px solid black;
@@ -30,7 +30,7 @@ body {
 	padding: 0px 5px 5px 5px;
 }
 
-.message {
+.div2 {
 	width: 300px;
 	height: auto;
 	border: 1px solid black;

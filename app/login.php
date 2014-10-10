@@ -8,7 +8,7 @@
 </head>
 <body>
 		<div class="top">Barroc-IT</div>
-			<div class="login">
+			<div class="div1">
 				<form method="post" action="controllers/authController.php" role="form">
 					<h2>Login</h2>
 					
@@ -25,7 +25,7 @@
 		<?php  
 		// succes of fail message
 		if (isset($_GET['msg'])) {
-		echo '<div class="message">' . htmlspecialchars($_GET['msg']) . '</div>' ;
+		echo '<div class="div2">' . htmlspecialchars($_GET['msg']) . '</div>' ;
 		}
 		?>
 	<div class="footer">&copy; Barroc-IT 2014</div>	

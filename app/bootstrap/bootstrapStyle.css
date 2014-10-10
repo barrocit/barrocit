@@ -3877,9 +3877,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 15px 55px;
   font-size: 18px;
   line-height: 20px;
-  position: relative;
-  left: 600px;
-
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -6197,4 +6194,9 @@ button.close {
     display: none !important;
   }
 }
+
+.table{
+  width:1140px;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

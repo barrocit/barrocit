@@ -18,7 +18,7 @@ switch($role) {
 		header('location: sales');
 		break;
 	case 4:
-		header('location: administrator');
+		header('location: admin.php');
 		break;
 	default:
 		header('location: controllers/authController.php?logout=true');

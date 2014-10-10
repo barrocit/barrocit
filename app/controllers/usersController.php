@@ -4,12 +4,8 @@ require '../../config/config.php';
 
 if ( isset($_POST['createUser']) ) 
 {
-	$voornaam      =mysqli_real_escape_string($con, $_POST['voornaam']);
-	$tussenvoegsel =mysqli_real_escape_string($con, $_POST['tussenvoegsel']);
-	$achternaam    =mysqli_real_escape_string($con, $_POST['achternaam']);
-	$username      =mysqli_real_escape_string($con, $_POST['username']);
-	$email         =mysqli_real_escape_string($con, $_POST['email']);
-	$rol           =mysqli_real_escape_string($con, $_POST['rol']);
+	$name      =mysqli_real_escape_string($con, $_POST['name']);
+	$gebruikersrol           =mysqli_real_escape_string($con, $_POST['gebruikersrol']);
 	
 	// GROVE FOUT HIERONDER!!!!!!!!!! gaan we straks fixen!!
 	$password      =mysqli_real_escape_string($con, $_POST['password']);
@@ -24,14 +20,10 @@ if ( isset($_POST['createUser']) )
 
 	// voor de laatste oefening, verander de $password naar $hashed.
 	
-	$sql = "INSERT INTO users (voornaam, tussenvoegsel, achternaam, username, email, gebruikersrol, password)
+	$sql = "INSERT INTO users (name, gebruikersrol, password)
 			VALUES (
-					'$voornaam',
-					'$tussenvoegsel',
-					'$achternaam',
-					'$username',
-					'$email',
-					'$rol',
+					'$name',
+					'$gebruikersrol',
 					'$password'
 				)";
 
@@ -39,10 +31,10 @@ if ( isset($_POST['createUser']) )
 
 	if (!$query) {
 		$msg = urlencode(trigger_error('query niet gelukt. geprobeerde query was ' . $sql));
-		header('location: ../createUser.php?msg='.$msg);	
+		header('location: ../admin.php?msg='.$msg);	
 	}
 
-	$msg = urlencode('User ' . $username . ' is succesfully created.');
-	header ('location: ../createUser.php?msg='.$msg);
+	$msg = urlencode('User ' . $name . ' is succesfully created.');
+	header ('location: ../admin.php?msg='.$msg);
 }
 

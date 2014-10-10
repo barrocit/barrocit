@@ -35,11 +35,23 @@
     </thead>
 
     <tbody>
-      <?php
-        $sql = "SELECT * FROM customers";
+      <tbody class="projects">
+        <?php 
+          $sql = "SELECT * FROM customers";
+          $query = mysqli_query($con, $sql);
 
-
-      ?>
+          while ($row = mysqli_fetch_assoc($query)) {
+            echo '<tr>';
+            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></td>';
+            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></td>';
+            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
+            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
+            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a></td>';
+            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limit'] . '</a></td>';
+            echo '</tr>';
+            }
+          ?>
+      </tbody>    
     </tbody>
   </table> 
 </div>

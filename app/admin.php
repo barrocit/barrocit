@@ -10,9 +10,9 @@
 		<div class="top">Barroc-IT</div>
 			<div class="div1">
 				<h2>Departments</h2>
-				- Development<br>
-				- Sales<br>
-				- Finance
+				- <a href="development">Development</a><br>
+				- <a href="sales">Sales</a><br>
+				- <a href="finance">Finance</a>
 			</div>
 			<div class="div2">
 				<h2>Invisible Invoices</h2>

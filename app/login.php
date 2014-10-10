@@ -8,7 +8,7 @@
 </head>
 <body>
 		<div class="top">Barroc-IT</div>
-			<div class="div1">
+			<div class="login">
 				<form method="post" action="controllers/authController.php" role="form">
 					<h2>Login</h2>
 					
@@ -28,6 +28,5 @@
 		echo '<div class="div2">' . htmlspecialchars($_GET['msg']) . '</div>' ;
 		}
 		?>
-	<div class="footer">&copy; Barroc-IT 2014</div>	
 </body>
 </html>

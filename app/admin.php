@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+<?php include "../config/config.php"; ?>
+<?php $accounts = mysqli_query($con,"SELECT * FROM users"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +21,45 @@
 			</div>
 			<div class="div2">
 				<h2>Accounts</h2>
+				<table>
+  					<thead>
+					    <tr>
+					      <th width="30" align="left">#</th>
+					      <th width="80" align="left">Naam</th>
+					      <th width="110" align="left">Rol</th>
+					      <th width="25" align="left"></th>
+					      <th width="25" align="left"></th>
+					    </tr>
+					</thead>
+					<tbody>
+					   	
+					     
+<?php
+				while($row = mysqli_fetch_array($accounts)) {
+  				echo '<tr><td>' . $row['id'] . '</td><td>' . $row['name'] . '</td><td>';
+  				if( $row['gebruikersrol'] == 4)
+  					{
+  						echo "Administrator";
+  					}
+  				if( $row['gebruikersrol'] == 3)
+  					{
+  						echo "Sales";
+  					}
+  				if( $row['gebruikersrol'] == 2)
+  					{
+  						echo "Development";
+  					}
+  				if( $row['gebruikersrol'] == 1)
+  					{
+  						echo "Finance";
+  					}
+
+
+  					echo '</td><td>/</td><td>X</td></tr>';
+}
+?>
+					</tbody>
+				</table> 
 			</div>
 			<div class="div2">
 					<form method="post" action="controllers/usersController.php" role="form">
@@ -49,6 +90,5 @@
 						echo '<div class="div2">' .  htmlspecialchars($_GET['msg']) . '</div>';
 						}
 						?>
-	<div class="footer">&copy; Barroc-IT 2014</div>	
 </body>
 </html>

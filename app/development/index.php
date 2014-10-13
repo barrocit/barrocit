@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php include "../../config/config.php"; ?>
 <!doctype html>
 <html>
 
@@ -35,23 +37,15 @@
     </thead>
 
     <tbody>
-      <tbody class="projects">
-        <?php 
-          $sql = "SELECT * FROM customers";
+        <?php
+          $sql = "SELECT * FROM customer";
           $query = mysqli_query($con, $sql);
+          
 
-          while ($row = mysqli_fetch_assoc($query)) {
-            echo '<tr>';
-            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></td>';
-            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></td>';
-            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
-            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['lastcontactDate'] . '</a></td>';
-            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['balance'] . '</a></td>';
-            echo '<td><a href="projecten.php?customerNR=' . $row['customerNR'] . '">' . $row['limit'] . '</a></td>';
-            echo '</tr>';
-            }
-          ?>
-      </tbody>    
+          while ($row = mysqli_fetch_assoc($query)){
+            echo '<td>' . $row['customerNR'] . '</td>';
+          }
+        ?>   
     </tbody>
   </table> 
 </div>

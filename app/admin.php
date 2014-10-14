@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	
 		<div class="top">Barroc-IT</div>
 			<div class="div1">
 				<h2>Departments</h2>
@@ -90,5 +91,6 @@
 						echo '<div class="div2">' .  htmlspecialchars($_GET['msg']) . '</div>';
 						}
 						?>
+
 </body>
 </html>

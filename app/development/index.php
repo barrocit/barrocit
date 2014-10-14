@@ -43,7 +43,14 @@
           
 
           while ($row = mysqli_fetch_assoc($query)){
-            echo '<td>' . $row['customerNR'] . '</td>';
+            echo '<tr><td>' . $row['companyName'] . '</td>';
+            echo '<td>' . $row['contactPerson'] . '</td>';
+            echo '<td>' . $row['openProjects'] . '</td>';
+            echo '<td>' . $row['lastcontactDate'] . '</td>';
+            echo '<td>' . $row['balance'] . '</td>';
+            echo '<td>' . $row['limit'] . '</td>';
+            echo '<td> <a href="edit.php?id=' . $row['customerNR'] . '"><img src="bewerken.png"></a>  </td>';
+            echo '<td> <a href="deactivateProject.php?id=' . $row['customerNR'] . '"><img src="verwijderen.png"></a> </td></tr>';
           }
         ?>   
     </tbody>

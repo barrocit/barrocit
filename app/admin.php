@@ -70,8 +70,8 @@ if ( isset($_GET['id']) )
   					}
 
 
-  					echo '</td><td> <a href="admin-edit.php?id=' . $row['id'] .'">/</a>' . '</td>';
-  					echo '<td> <a href="?id=' . $row['id'] .'">X</a>' . '</td>';
+  					echo '</td><td> <a href="admin-edit.php?id=' . $row['id'] .'"><img src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a>' . '</td>';
+  					echo '<td> <a href="?id=' . $row['id'] .'"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a>' . '</td>';
 }
 ?>
 					</tbody>

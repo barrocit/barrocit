@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php include "../../config/config.php"; ?>
 <!doctype html>
 <html>
 
@@ -17,39 +19,32 @@
     <a class="navbar-brand" href="#"></a>
   </div>
 </div>
-  <table class="overzicht_custommers">
+  <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <td class="col-sm-2"><strong>companyName</strong></td>
-                            <td class="col-sm-3"><strong>adress1</strong></td>        
-                            <td class="col-sm-1"><strong>zipcode1</strong></td>
-                            <td class="col-sm-2"><strong>residence1</strong></td>
+                            <td class="col-sm-3"><strong>address</strong></td>        
+                            <td class="col-sm-1"><strong>zipcode</strong></td>
+                            <td class="col-sm-2"><strong>residence</strong></td>
                             <td class="col-sm-2"><strong>email</strong></td>        
                             <td class="col-sm-1"><strong>prospect</strong></td>
-                            <td class="col-sm-1"><strong>creditWorthy</strong></td>
-                            <td class="col-sm-1"><strong>action</strong></td>
+                            <td class="col-sm-1"><strong>krediet</strong></td>  
                         </tr>
-                                     <?php
-                    while ($row = mysqli_fetch_assoc($query)) 
-                    {
-                        $id=$row['CustomerNR'];
-                        echo '<tr>';
-                        echo '<td>' . $row['companyName'] . '</td>';
-                        echo '<td>' . $row['adress1'] . '</td>';
-                        echo '<td>' . $row['zipcode1'] . '</td>';
-                        echo '<td>' . $row['residence1'] . '</td>';
-                        echo '<td>' . $row['email'] . '</td>';
-                        echo '<td>' . $row['prospect'] . '</td>';
-                        echo '<td>' . $row['creditWorthy'] . '</td>';
-                        ?>
-                        <html>
-                        <td>  <a href="view.php?id=<?php echo $id;?>" class="btn btn-info">View</a>
-                        <td> <a href="edit.php?id=<?php echo $id;?>" class="btn btn-primary">Edit</a>
-                        </html>
-                        <?php
-                        echo '</tr>';
-                    }
-                    ?>
+                <?php       
+                     $sql = "SELECT * FROM customer";
+                     $query = mysqli_query($con, $sql);
+          
+
+                     while ($row = mysqli_fetch_assoc($query)){
+                     echo '<tr><td>' . $row['companyName'] . '</td>';
+                     echo '<td>' . $row['address'] . '</td>';
+                     echo '<td>' . $row['zipCode'] . '</td>';
+                     echo '<td>' . $row['residence'] . '</td>';
+                     echo '<td>' . $row['email'] . '</td>';
+                     echo '<td>' . $row['prospect'] . '</td>';
+                     echo '<td>' . $row['krediet'] . '</td></tr>';
+                }
+                ?>
                     </thead>
 </div>
 </body>

@@ -1,6 +1,20 @@
 <?php session_start(); ?>
 <?php include "../config/config.php"; ?>
 <?php $accounts = mysqli_query($con,"SELECT * FROM users"); ?>
+<?php 
+if ( isset($_GET['id']) )
+		{
+			echo 'verwijderen';
+			$id = $_GET['id'];
+			$sql = "DELETE FROM users WHERE id = '$id'";
+
+			if (!$query = mysqli_query($con, $sql)) {
+				echo 'delete query is niet goed gegaan';
+				die();
+			}
+			header('location: index.php');
+		}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +70,8 @@
   					}
 
 
-  					echo '</td><td>/</td><td>X</td></tr>';
+  					echo '</td><td>/</td>';
+  					echo '<td> <a href="?id=' . $row['id'] .'">X</a>' . '</td>';
 }
 ?>
 					</tbody>

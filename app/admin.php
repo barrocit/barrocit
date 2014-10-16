@@ -70,7 +70,7 @@ if ( isset($_GET['id']) )
   					}
 
 
-  					echo '</td><td>/</td>';
+  					echo '</td><td> <a href="admin-edit.php?id=' . $row['id'] .'">/</a>' . '</td>';
   					echo '<td> <a href="?id=' . $row['id'] .'">X</a>' . '</td>';
 }
 ?>

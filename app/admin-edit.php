@@ -44,7 +44,7 @@
 				<div class="width-tabel"><label for="name">Name:</label></div>
 				<input type="text" name="name" id="name" value="<?php echo $row['name']; ?>">
 				<div class="width-tabel"><label for="gebruikersrol">User Role:</label></div>
-				<select name="gebruikersrol" id="gebruikersrol" option value="<?php echo $row['gebruikersrol']; ?>">
+				<select name="gebruikersrol" id="gebruikersrol" value="<?php echo $row['gebruikersrol']; ?>">
 					<option value="4">Administrator</option>
 					<option value="2">Development</option>
 					<option value="1">Finance</option>

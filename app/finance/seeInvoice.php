@@ -10,9 +10,15 @@
 </head>
 
 <body>
-	<header>
-    
-	</header>
+<?php
+  if( isset($_GET['id']) ) {
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM invoices WHERE invoicersNR = '$invoicersNR'";
+    if (!$query = mysqli_query($con, $sql)) {
+      echo 'Kan selectie niet uitvoeren.';
+      die();
+    }
+    ?>
 
 <div class="container">
 

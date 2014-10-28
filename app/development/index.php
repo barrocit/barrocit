@@ -16,12 +16,12 @@
 
 <div class="container">
 
-<img src="../images/jumbotrondev.jpg" width="1140" height= "400px;"/>
+<img src="../images/menuBarrocit.png" width="1140" height= "400px;"/>
 
 <div class="navbar navbar-default">
   <div class="navbar-header">
     <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="#">Project</a>
+    <a class="navbar-brand" href="addProject.php">Add Project</a>
     <a class="navbar-brand" href="deactivateprojects.php">Deactivated projects</a>
   </div>
 </div>

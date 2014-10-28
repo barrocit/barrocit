@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 10 okt 2014 om 14:20
+-- Genereertijd: 16 okt 2014 om 10:18
 -- Serverversie: 5.6.12-log
 -- PHP-versie: 5.4.12
 
@@ -52,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `zipCode` varchar(7) COLLATE latin1_bin NOT NULL,
   `residence` varchar(30) COLLATE latin1_bin NOT NULL,
   `telephoneNumber` int(10) NOT NULL,
+  `faxNumber` int(10) NOT NULL,
   `email` varchar(40) COLLATE latin1_bin NOT NULL,
   `invoicesNumber` int(5) NOT NULL,
   `openProjects` int(5) NOT NULL,
@@ -71,14 +72,16 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `prospect` varchar(40) COLLATE latin1_bin NOT NULL,
   `bkrControle` tinyint(4) NOT NULL,
   PRIMARY KEY (`customerNR`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_bin AUTO_INCREMENT=102 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_bin AUTO_INCREMENT=104 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `customer`
 --
 
-INSERT INTO `customer` (`customerNR`, `companyName`, `address`, `zipCode`, `residence`, `telephoneNumber`, `email`, `invoicesNumber`, `openProjects`, `appointments`, `internalContact`, `dateAction`, `lastcontactDate`, `nextAction`, `contactPerson`, `btwCode`, `salesAmount`, `balance`, `credit`, `limit`, `grootboekrekeningNR`, `offerStatus`, `prospect`, `bkrControle`) VALUES
-(101, 'barrocit', 'Terheijdenseweg 350', '4826 AA', 'Breda', 76733444, 'radiuscollege@hotmail.com', 3, 1, '', '', '0000-00-00', '2014-10-09', '0000-00-00', 'Fer van Krimpen', 0, 0, 1500, 0, 1000, '', '', '', 0);
+INSERT INTO `customer` (`customerNR`, `companyName`, `address`, `zipCode`, `residence`, `telephoneNumber`, `faxNumber`, `email`, `invoicesNumber`, `openProjects`, `appointments`, `internalContact`, `dateAction`, `lastcontactDate`, `nextAction`, `contactPerson`, `btwCode`, `salesAmount`, `balance`, `credit`, `limit`, `grootboekrekeningNR`, `offerStatus`, `prospect`, `bkrControle`) VALUES
+(101, 'barrocit', 'Terheijdenseweg 350', '4826 AA', 'Breda', 76733444, 0, 'radiuscollege@hotmail.com', 3, 1, '', '', '0000-00-00', '2014-10-09', '0000-00-00', 'Fer van Krimpen', 0, 0, 1500, 0, 1000, '', '', '', 0),
+(102, 'Barroc-IT', 'Terheijdenseweg 350', '5544 AA', 'Breda', 764635354, 0, 'Jesse@hotmail.com', 3, 2, '', '', '0000-00-00', '2014-10-02', '0000-00-00', 'Jesse Peffer', 53245254, 0, 3000, 0, 2500, '', '', '', 0),
+(103, 'Barroc-IT', 'Terheijdensweg 350', '4455 AB', 'Breedjeda', 683937583, 0, 'nick@hotmail.com', 4, 1, '', '', '0000-00-00', '2014-10-11', '0000-00-00', 'Nick de Koning', 543663324, 2000, 4000, 0, 1750, '5345363', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -110,6 +113,13 @@ CREATE TABLE IF NOT EXISTS `projects` (
   PRIMARY KEY (`projectsNR`),
   KEY `customerNR` (`customerNR`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `projects`
+--
+
+INSERT INTO `projects` (`projectsNR`, `customerNR`, `maintenanceContract`, `software`, `hardware`, `description`) VALUES
+(1, 101, 0, 'Sublime text 2', 'Laptop', '');
 
 -- --------------------------------------------------------
 

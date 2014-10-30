@@ -21,8 +21,8 @@
 <div class="navbar navbar-default">
   <div class="navbar-header">
     <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="addProject.php">Add Project</a>
-    <a class="navbar-brand" href="deactivateprojects.php">Deactivated projects</a>
+    <a class="navbar-brand" href="deactivatedprojects.php">Deactivated projects</a>
+    <a class="navbar-brand" href="logout.php">Log out</a>
   </div>
 </div>
 
@@ -38,7 +38,6 @@
         <th>Fax number</th>
         <th>Email</th>
         <th>Open projects</th>
-        <th>Deactivate</th>
       </tr>
     </thead>
 
@@ -58,7 +57,6 @@
             echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['faxNumber'] . '</a></td>';
             echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['email'] . '</a></td>';
             echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
-            echo '<td> <a href="deactivateProject.php?id=' . $row['customerNR'] . '"><img src="verwijderen.png"></a> </td></tr>';
           }
         ?>   
     </tbody>

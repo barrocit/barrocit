@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 16 okt 2014 om 10:18
+-- Genereertijd: 30 okt 2014 om 09:55
 -- Serverversie: 5.6.12-log
 -- PHP-versie: 5.4.12
 
@@ -90,11 +90,12 @@ INSERT INTO `customer` (`customerNR`, `companyName`, `address`, `zipCode`, `resi
 --
 
 CREATE TABLE IF NOT EXISTS `invoices` (
-  `invoicersNR` int(11) NOT NULL AUTO_INCREMENT,
+  `invoicesNR` int(11) NOT NULL AUTO_INCREMENT,
   `projectsNR` int(10) NOT NULL,
   `date` date NOT NULL,
   `amount` int(10) NOT NULL,
-  PRIMARY KEY (`invoicersNR`)
+  PRIMARY KEY (`invoicesNR`),
+  KEY `projectsNR` (`projectsNR`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -112,14 +113,17 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `description` varchar(75) NOT NULL,
   PRIMARY KEY (`projectsNR`),
   KEY `customerNR` (`customerNR`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `projects`
 --
 
 INSERT INTO `projects` (`projectsNR`, `customerNR`, `maintenanceContract`, `software`, `hardware`, `description`) VALUES
-(1, 101, 0, 'Sublime text 2', 'Laptop', '');
+(49, 101, 0, 'Google chrome, Wamp server & Sublime text 2', 'Laptop', 'Finance application for BarrocIT. Contactperson: Fer v Krimpen'),
+(50, 102, 1, 'Notepad ++, Wamp server & Google chrome', 'Laptop', 'A application for the administration'),
+(51, 102, 1, 'Sublime text 2, Wamp server & Mozilla firefox', 'Laptop', 'Finance application'),
+(52, 103, 0, 'Sublime text 2, Wamp server & Google chrome', 'Laptop', 'A application for the administration');
 
 -- --------------------------------------------------------
 
@@ -144,6 +148,28 @@ INSERT INTO `users` (`id`, `name`, `password`, `gebruikersrol`) VALUES
 (2, 'finance', 'finance', 1),
 (3, 'sales', 'sales', 3),
 (4, 'development', 'development', 2);
+
+--
+-- Beperkingen voor gedumpte tabellen
+--
+
+--
+-- Beperkingen voor tabel `appointments`
+--
+ALTER TABLE `appointments`
+  ADD CONSTRAINT `appointments_customers` FOREIGN KEY (`customersNR`) REFERENCES `customer` (`customerNR`) ON UPDATE CASCADE;
+
+--
+-- Beperkingen voor tabel `invoices`
+--
+ALTER TABLE `invoices`
+  ADD CONSTRAINT `project-invoices` FOREIGN KEY (`projectsNR`) REFERENCES `projects` (`projectsNR`) ON UPDATE CASCADE;
+
+--
+-- Beperkingen voor tabel `projects`
+--
+ALTER TABLE `projects`
+  ADD CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`customerNR`) REFERENCES `customer` (`customerNR`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

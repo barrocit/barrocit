@@ -16,15 +16,17 @@
 	}
 
 	if (isset($_POST['submit'])) {
-/*		$customerNR	=	$_POST['customerNR'];*/
+    // var_dump($_POST); die();
+		$customerNR	=	$_GET['customerNR'];
 		$maintenanceContract	=	$_POST['maintenanceContract'];
 		$software	=	$_POST['software'];
 		$hardware	=	$_POST['hardware'];
 		$description	=	$_POST['description'];
 	
 
-	if (!$query 	= mysqli_query($con, "INSERT INTO projects(maintenanceContract, software, hardware, description) VALUES ('$maintenanceContract', '$software', '$hardware', '$description')")) {
-	
+	if ($query 	= mysqli_query($con, "INSERT INTO projects(customerNR, maintenanceContract, software, hardware, description) VALUES ('$customerNR', '$maintenanceContract', '$software', '$hardware', '$description')"))
+  {
+	  header('location:projects.php?customerNR=' . $customerNR); 
 	}else{
 		echo "kan data niet toevoegen aan database";
 	}
@@ -40,9 +42,9 @@
 
 <div class="navbar navbar-default">
 	<div class="navbar-header">
-    	<a class="navbar-brand" href="index.php">Home</a>
-    	<a class="navbar-brand" href="addProject.php">Add project</a>
-    	<a class="navbar-brand" href="deactivateprojects.php">Deactivated projects</a>
+    <a class="navbar-brand" href="index.php">Home</a>
+    <a class="navbar-brand" href="deactivatedprojects.php">Deactivated projects</a>
+    <a class="navbar-brand" href="logout.php">Log out</a>
 	</div>
 </div>
 
@@ -53,6 +55,7 @@
 			<th>Software</th>
 			<th>Hardware</th>
 			<th>Description</th>
+      <th>Edit</th>
 			<th>Deactivate</th>
 		</tr>
 	</thead>	
@@ -63,11 +66,13 @@
           
           while ($row = mysqli_fetch_assoc($query)){
             echo '<tr>';
-            echo'<td>' . $row['maintenanceContract'] . '</td>';
+            $maintenance = $row['maintenanceContract'] == 1 ? 'Yes' : 'No';
+            echo'<td>' . $maintenance . '</td>';
             echo'<td>' . $row['software'] . '</td>';
             echo'<td>' . $row['hardware'] . '</td>';
             echo'<td>' . $row['description'] . '</td>';
-            echo '<td> <a href="deactivateProject.php?id=' . $row['customerNR'] . '"><img src="verwijderen.png"></a> </td></tr>';
+            echo '<td> <a href="edit.php?projectsNR=' . $row['projectsNR'] . '"><img src="bewerken.png"></a></td>';
+            echo '<td> <a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '"><img src="verwijderen.png"></a></td></tr>';
             echo '</tr>';
 
           }
@@ -78,9 +83,10 @@
 <form action"#" method="POST" class="form-horizontal">
       <legend>Add project:</legend>
         <div class="form-group">
-            <label for="maintenanceContract" class="col-lg-2 control-label">Maintenance contract</label>
+           <label for="maintenanceContract" class="col-lg-2 control-label">Maintenance contract</label>
           <div class="col-lg-10">
-        <input type="text" class="form-control" id="maintenanceContract" name="maintenanceContract">
+        <input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="1">Yes
+        <input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="0">No
       </div>
    </div>
         <div class="form-group">

@@ -46,12 +46,12 @@
           
 
           while ($row = mysqli_fetch_assoc($query)){
-            echo '<tr><td><a href="seeInvoice.php?id=' . $row['invoicersNR'] .'">X</a></td>';
+            echo '<tr><td><a href="seeInvoice.php?id=' . $row['invoiceNR'] .'">X</a></td>';
             echo '<td>' . $row['company'] . '</td>';
-            echo '<td>' . $row['invoicersNR'] . '</td>';
-            echo '<td>' . $row['projectsNR'] . '</td>';
-            echo '<td>' . $row['datum'] . '</td>';
-            echo '<td>' . $row['bedrag'] . '</td>';
+            echo '<td>' . $row['invoiceNR'] . '</td>';
+            echo '<td>' . $row['projectNR'] . '</td>';
+            echo '<td>' . $row['date'] . '</td>';
+            echo '<td>' . $row['amount'] . '</td>';
             echo '<td> <a href="deactivateProject.php?id="><img src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a> </td>';
             echo '<td> <a href="deactivateProject.php?id="><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a> </td></tr>';
           }

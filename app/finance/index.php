@@ -46,12 +46,12 @@
           
 
           while ($row = mysqli_fetch_assoc($query)){
-            echo '<tr><td><a href="seeInvoice.php?id=' . $row['invoiceNR'] .'">X</a></td>';
-            echo '<td>' . $row['company'] . '</td>';
-            echo '<td>' . $row['invoiceNR'] . '</td>';
-            echo '<td>' . $row['projectNR'] . '</td>';
-            echo '<td>' . $row['date'] . '</td>';
-            echo '<td>' . $row['amount'] . '</td>';
+            echo '<tr><td><a href="seeInvoice.php?id=' . $row['invoicesNR'] .'">X</a></td>';
+            echo '<td>' . $row['invoicesNR'] . '</td>';
+            echo '<td>' . $row['invoicesNR'] . '</td>';
+            echo '<td>' . $row['invoicesNR'] . '</td>';
+            echo '<td>' . $row['invoicesNR'] . '</td>';
+            echo '<td>' . $row['invoicesNR'] . '</td>';
             echo '<td> <a href="deactivateProject.php?id="><img src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a> </td>';
             echo '<td> <a href="deactivateProject.php?id="><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a> </td></tr>';
           }

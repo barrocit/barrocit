@@ -28,7 +28,7 @@
                             <td class="col-sm-2"><strong>residence</strong></td>
                             <td class="col-sm-2"><strong>email</strong></td>        
                             <td class="col-sm-1"><strong>prospect</strong></td>
-                            <td class="col-sm-1"><strong>krediet</strong></td> 
+                            <td class="col-sm-1"><strong>credit</strong></td> 
                             <td class="col-sm-1"><strong>Bewerken</strong></td>  
                             <td class="col-sm-1"><strong>Verwijderen</strong></td>  
                         </tr>
@@ -44,7 +44,7 @@
                      echo '<td>' . $row['residence'] . '</td>';
                      echo '<td>' . $row['email'] . '</td>';
                      echo '<td>' . $row['prospect'] . '</td>';
-                     echo '<td>' . $row['krediet'] . '</td>';
+                     echo '<td>' . $row['credit'] . '</td>';
                      echo '</td><td> <a href="klant-bewerken.php?id=' . $row['customerNR'] .'"><img                                             src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a>' . '</td>';
                      echo '<td> <a href="?id=' . $row['companyName'] .'"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a>' . '</td></tr>';
                 }

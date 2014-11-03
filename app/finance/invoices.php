@@ -37,8 +37,8 @@
         <th>Description</th>
         <th>Date Invoice</th>
         <th>Price</th>
-        <th>Quantity</th>
         <th>BTW</th>
+        <th>Quantity</th>
         <th>Amount</th>
         <th>Edit Invoice</th>
         <th>Deactivate</th>
@@ -54,11 +54,11 @@
             echo '<tr><td>' . $row['description'] . '</td>';
             echo '<td>' . $row['datum'] . '</td>';
             echo '<td>' . $row['price'] . '</td>';
-            echo '<td>' . $row['quantity'] . '</td>';
             echo '<td>' . $row['btw'] . '%</td>';
+            echo '<td>' . $row['quantity'] . '</td>';
             echo '<td>' . $row['amount'] . '</td>';
             echo '<td> <a href="invoices-edit.php?id=' . $row['invoicesNR'] . '"><img src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a> </td>';
-            echo '<td> <a href="invoices-edit.php?id=' . $row['invoicesNR'] . '"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a> </td></tr>';
+            echo '<td> <a href="#"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a> </td></tr>';
           }
         ?> 
     </tbody>

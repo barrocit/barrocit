@@ -29,7 +29,7 @@
 
 <img src="../images/jumbotronfi.jpg" width="1140" height= "400px;"/>
 
-<div class="page-header"><h2>Invoices</h2></div>
+<div class="page-header"><h2>Invoices <a href="index.php" align="right" class="btn btn-danger">Go Back</a> <a href="invoices-add.php" align="right" class="btn btn-success">Add Invoice</a></h2></div>
 
 <table class="table table-striped table-hover ">
     <thead>

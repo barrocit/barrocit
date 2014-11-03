@@ -43,7 +43,7 @@
             echo '<td>' . $row['telephoneNumber'] . '</td>';
             echo '<td>' . $row['email'] . '</td>';
             echo '<td>' . $row['openProjects'] . '</td>';
-            echo '<td> <a href="projects.php?id=' . $row['customerNR'] . '"><img src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a> </td></tr>';
+            echo '<td> <a href="projects.php?id=' . $row['customerNR'] . '"><img src="http://localhost/GitHub/barrocit/app/development/search.png"></a> </td></tr>';
           }
         ?>   
     </tbody>

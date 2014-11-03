@@ -29,7 +29,7 @@
 
 <img src="../images/jumbotronfi.jpg" width="1140" height= "400px;"/>
 
-<div class="page-header"><h2>Projects</h2></div>
+<div class="page-header"><h2>Projects <a href="index.php" align="right" class="btn btn-danger">Go Back</a></h2></div>
 
 <table class="table table-striped table-hover ">
     <thead>
@@ -50,7 +50,7 @@
             echo '<tr><td>' . $row['description'] . '</td>';
             echo '<td>' . $row['software'] . '</td>';
             echo '<td>' . $row['hardware'] . '</td>';
-            echo '<td> <a href="invoices.php?id=' . $row['projectsNR'] . '"><img src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a> </td></tr>';
+            echo '<td> <a href="invoices.php?id=' . $row['projectsNR'] . '"><img src="http://localhost/GitHub/barrocit/app/development/search.png"></a> </td></tr>';
           }
         ?> 
     </tbody>

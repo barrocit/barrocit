@@ -71,7 +71,7 @@
             echo'<td>' . $row['software'] . '</td>';
             echo'<td>' . $row['hardware'] . '</td>';
             echo'<td>' . $row['description'] . '</td>';
-            echo '<td> <a href="edit.php?projectsNR=' . $row['projectsNR'] . '"><img src="bewerken.png"></a></td>';
+            echo '<td> <a href="edit.php?projectsNR=' . $row['projectsNR'] . '&customerNR=' . $_GET['customerNR'] . '"><img src="bewerken.png"></a></td>';
             echo '<td> <a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '"><img src="verwijderen.png"></a></td></tr>';
             echo '</tr>';
 

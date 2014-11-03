@@ -13,7 +13,7 @@
   <?php
     if( isset($_GET['id']) ) {
     $id = $_GET['id'];
-    $sql = "SELECT * FROM invoices WHERE invoicesNR = '$id'";
+    $sql = "SELECT * FROM invoices WHERE invoicesNR = $id";
     if (!$query = mysqli_query($con, $sql)) {
       echo 'Kan selectie niet uitvoeren.';
       die();
@@ -30,17 +30,10 @@
   </div>
 </div>
 <table class="table table-striped table-hover ">
-      <tr>
-        <th width="300px">Company Name</th>
-        <td><?php echo $row['company']; ?> </td>
-      </tr>
-      <tr>
-        <th>Invoicenumber</th>
-        <td><?php echo $row['invoiceNR']; ?> </td>
-      </tr>
+  <h2>Invoicenumber: <?php echo $row['invoicesNR']; ?> - Company Name: <?php echo $row['companyName']; ?></h2>
       <tr>
         <th>Projectnumber</th>
-        <td><?php echo $row['projectNR']; ?> </td>
+        <td><?php echo $row['projectsNR']; ?> </td>
       </tr>
       <tr>
         <th>Date Invoice</th>
@@ -48,7 +41,7 @@
       </tr>
       <tr>
         <th>Address</th>
-        <td><?php echo $row['address']; ?> </td>
+        <td><?php echo $row['software']; ?> </td>
       </tr>
       <tr>
         <th>Zip Code</th>
@@ -99,8 +92,8 @@
         <td><?php echo $row['id']; ?> </td>
       </tr>
       <tr>
-        <th>BTW-code</th>
-        <td><?php echo $row['id']; ?> </td>
+        <th>BTW</th>
+        <td><?php echo $row['btw']; ?>%</td>
       </tr>
   </table> 
 </div>

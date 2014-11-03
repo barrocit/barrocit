@@ -33,6 +33,7 @@ if ( isset($_GET['id']) )
 			</div>
 			<div class="div2">
 				<h2>Invisible Invoices</h2>
+				No invisible invoices.
 			</div>
 			<div class="div2">
 				<h2>Accounts</h2>

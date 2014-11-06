@@ -40,13 +40,14 @@
         $zipCode = mysqli_real_escape_string($con, $_POST['zipCode']);
         $residence = mysqli_real_escape_string($con, $_POST['residence']);
         $telephoneNumber = mysqli_real_escape_string($con, $_POST['telephoneNumber']);
+        $faxNumber = mysqli_real_escape_string($con, $_POST['faxNumber']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $appointments = mysqli_real_escape_string($con, $_POST['appointments']);
         $lastcontactDate = mysqli_real_escape_string($con, $_POST['lastcontactDate']);
         $contactPerson = mysqli_real_escape_string($con, $_POST['contactPerson']);
         $prospect = mysqli_real_escape_string($con, $_POST['prospect']);
         
-		$sql = "UPDATE customer SET companyName = '$companyName', address = '$address', zipCode = '$zipCode', residence = '$residence', telephoneNumber = '$telephoneNumber', email = '$email', appointments = '$appointments', lastcontactDate = '$lastcontactDate', contactPerson = 'contactPerson', prospect = '$prospect'  WHERE customerNR = '$id'";
+		$sql = "UPDATE customer SET companyName = '$companyName', address = '$address', zipCode = '$zipCode', residence = '$residence', telephoneNumber = '$telephoneNumber', faxNumer = '$faxNumber', email = '$email', appointments = '$appointments', lastcontactDate = '$lastcontactDate', contactPerson = '$contactPerson', prospect = '$prospect'  WHERE customerNR = '$id'";
 
 	if	(!$query = mysqli_query($con, $sql)) {
 			echo 'Kan geen update uitvoeren.';
@@ -65,17 +66,19 @@
 				<input type="text" name="zipCode" id="zipCode" value="<?php echo $row['zipCode']; ?>">
                 <div class="width-tabel"><label for="residence">Residence:</label></div>
 				<input type="text" name="residence" id="residence" value="<?php echo $row['residence']; ?>">
-                <div class="width-tabel"><label for="telephoneNumber">TelephoneNumber:</label></div>
+                <div class="width-tabel"><label for="telephoneNumber">Telephone number:</label></div>
 				<input type="text" name="telephoneNumber" id="telephoneNumber" value="<?php echo $row['telephoneNumber']; ?>">
+                <div class="width-tabel"><label for="faxNumber">Faxnumber:</label></div>
+				<input type="text" name="faxNumber" id="faxNumber" value="<?php echo $row['faxNumber']; ?>">
                 <div class="width-tabel"><label for="email">Email:</label></div>
 				<input type="text" name="email" id="email" value="<?php echo $row['email']; ?>">
                 <div class="width-tabel"><label for="appointments">Appointments:</label></div>
 				<input type="text" name="appointments" id="appointments" value="<?php echo $row['appointments']; ?>">
-                <div class="width-tabel"><label for="lastcontactDate">lastcontactDate:</label></div>
+                <div class="width-tabel"><label for="lastcontactDate">Last contact date:</label></div>
 				<input type="text" name="lastcontactDate" id="lastcontactDate" value="<?php echo $row['lastcontactDate']; ?>">
-                <div class="width-tabel"><label for="contactPerson">contactPerson:</label></div>
+                <div class="width-tabel"><label for="contactPerson">Contact person:</label></div>
 				<input type="text" name="contactPerson" id="contactPerson" value="<?php echo $row['contactPerson']; ?>">
-                <div class="width-tabel"><label for="prospect">prospect:</label></div>
+                <div class="width-tabel"><label for="prospect">Prospect:</label></div>
 				<input type="text" name="prospect" id="prospect" value="<?php echo $row['prospect']; ?>">
 				<div class="width-tabel"></div>
 				<input name="submit" type="submit" value="Update Klant" id="button">

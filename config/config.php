@@ -1,3 +1,3 @@
 <?php
 
-$con = mysqli_connect('localhost', 'root', '1234', 'barrocit');
+$con = mysqli_connect('localhost', 'root', '', 'barrocit');

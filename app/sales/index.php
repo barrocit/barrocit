@@ -12,6 +12,20 @@
 	</header>
 </head>
 <body>
+    <?php
+     if ( isset($_GET['id']) )
+		      {
+			$id = $_GET['id'];
+			$sql = "DELETE FROM customer WHERE customerNR = '$id'";
+
+			if (!$query = mysqli_query($con, $sql)) {
+				echo 'delete query is niet goed gegaan';
+				die();
+			}
+			header('location: index.php');
+		}
+
+?>
 <div class="container">
 <div class="navbar navbar-default">
   <div class="navbar-header">
@@ -46,8 +60,9 @@
                      echo '<td>' . $row['prospect'] . '</td>';
                      echo '<td>' . $row['credit'] . '</td>';
                      echo '</td><td> <a href="klant-bewerken.php?id=' . $row['customerNR'] .'"><img                                             src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a>' . '</td>';
-                     echo '<td> <a href="?id=' . $row['companyName'] .'"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a>' . '</td></tr>';
+                     echo '<td> <a href="?id=' . $row['customerNR'] .'"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a>' . '</td></tr>';
                 }
+
                 ?>
                     </thead>
 </div>

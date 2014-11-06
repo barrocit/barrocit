@@ -4,19 +4,21 @@ require '../../config/config.php';
 
 if ( isset($_POST['createInvoice']) ) 
 {
-	$projectsNR = 51;
-	$datum           =mysqli_real_escape_string($con, $_POST['datum']);
-	$amount      =mysqli_real_escape_string($con, $_POST['amount']);
-	$btw      =mysqli_real_escape_string($con, $_POST['btw']);
-	$companyName      =mysqli_real_escape_string($con, $_POST['companyName']);
+	$projectsNR = mysqli_real_escape_string($con, $_POST['projectsNR']);
+	$description =mysqli_real_escape_string($con, $_POST['description']);
+	$datum =mysqli_real_escape_string($con, $_POST['datum']);
+	$price = mysqli_real_escape_string($con, $_POST['price']);
+	$btw =mysqli_real_escape_string($con, $_POST['btw']);
+	$quantity =mysqli_real_escape_string($con, $_POST['quantity']);
 	
-	$sql = "INSERT INTO invoices (projectsNR, datum, amount, btw, companyName)
+	$sql = "INSERT INTO invoices (projectsNR, description, datum, price, btw, quantity)
 			VALUES (
 					'$projectsNR',
+					'$description',
 					'$datum',
-					'$amount',
+					'$price',
 					'$btw',
-					'$companyName'
+					'$quantity'
 				)";
 
 	$query = mysqli_query($con, $sql);

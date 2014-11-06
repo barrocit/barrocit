@@ -27,13 +27,29 @@
 
 <div class="container">
 
-<img src="../images/jumbotronfi.jpg" width="1140" height= "400px;"/>
+<img src="../images/menuBarrocit.png" width="1140" height= "400px;"/>
 
-<div class="page-header"><h2>Projects <a href="index.php" align="right" class="btn btn-danger">Go Back</a></h2></div>
+<div class="navbar navbar-default">
+  <div class="navbar-header">
+    <a class="navbar-brand">Finance</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Index</a></li>
+      <li class="active"><a href="#">Projects</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="page-header"><h2>Projects</h2></div>
 
 <table class="table table-striped table-hover ">
     <thead>
       <tr>
+        <th>Project NR</th>
         <th>Description</th>
         <th>Software</th>
         <th>Hardware</th>
@@ -47,7 +63,8 @@
           
 
           while ($row = mysqli_fetch_assoc($query)){
-            echo '<tr><td>' . $row['description'] . '</td>';
+            echo '<tr><td>' . $row['projectsNR'] . '</td>';
+            echo '<td>' . $row['description'] . '</td>';
             echo '<td>' . $row['software'] . '</td>';
             echo '<td>' . $row['hardware'] . '</td>';
             echo '<td> <a href="invoices.php?id=' . $row['projectsNR'] . '"><img src="http://localhost/GitHub/barrocit/app/development/search.png"></a> </td></tr>';

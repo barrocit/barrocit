@@ -33,7 +33,26 @@ if ( isset($_GET['id']) )
 			</div>
 			<div class="div2">
 				<h2>Invisible Invoices</h2>
-				No invisible invoices.
+				<table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th width="200" align="left">Description</th>
+        <th>Activate</th>
+      </tr>
+    </thead>
+    <tbody>
+        <?php
+          $sql = "SELECT * FROM invoices WHERE active = '1'";
+          $query = mysqli_query($con, $sql);
+
+          while ($row = mysqli_fetch_assoc($query)){
+
+            echo '<tr><td>' . $row['description'] . '</td>';
+            echo '<td> <a href="#"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a> </td></tr>';
+          }
+        ?> 
+    </tbody>
+  </table> 
 			</div>
 			<div class="div2">
 				<h2>Accounts</h2>

@@ -3,6 +3,7 @@
 if ( ! isset($_SESSION['name']) ) {
 	$msg = urlencode('U dient ingelogd te zijn');
 	header('location: login.php?msg=' . $msg);
+	die();
 }
 
 $role = $_SESSION['gebruikersrol'];

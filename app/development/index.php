@@ -21,7 +21,6 @@
 <div class="navbar navbar-default">
   <div class="navbar-header">
     <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="deactivatedprojects.php">Deactivated projects</a>
     <a class="navbar-brand" href="logout.php">Logout</a>
 
   </div>
@@ -39,6 +38,7 @@
         <th>Fax number</th>
         <th>Email</th>
         <th>Open projects</th>
+        <th>See projects</th>
       </tr>
     </thead>
 
@@ -49,15 +49,16 @@
           
 
           while ($row = mysqli_fetch_assoc($query)){
-            echo '<tr><td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['companyName'] . '</a></td>';
-            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['contactPerson'] . '</a></td>';
-            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['address'] . '</a></td>';
-            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['zipCode'] . '</a></td>';
-            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['residence'] . '</a></td>';
-            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['telephoneNumber'] . '</a></td>';
-            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['faxNumber'] . '</a></td>';
-            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['email'] . '</a></td>';
-            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '">' . $row['openProjects'] . '</a></td>';
+            echo '<tr><td>' . $row['companyName'] . '</a></td>';
+            echo '<td>' . $row['contactPerson'] . '</a></td>';
+            echo '<td>' . $row['address'] . '</a></td>';
+            echo '<td>' . $row['zipCode'] . '</a></td>';
+            echo '<td>' . $row['residence'] . '</a></td>';
+            echo '<td>' . $row['telephoneNumber'] . '</a></td>';
+            echo '<td>' . $row['faxNumber'] . '</a></td>';
+            echo '<td><a href="mailto:">' . $row['email'] . '</a></td>';
+            echo '<td>' . $row['openProjects'] . '</a></td>';
+            echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '"><img src="img/search.png"> </a></td>';
           }
         ?>   
     </tbody>

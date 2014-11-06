@@ -43,7 +43,6 @@
 <div class="navbar navbar-default">
 	<div class="navbar-header">
     <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="deactivatedprojects.php">Deactivated projects</a>
     <a class="navbar-brand" href="logout.php">Log out</a>
 	</div>
 </div>
@@ -71,8 +70,8 @@
             echo'<td>' . $row['software'] . '</td>';
             echo'<td>' . $row['hardware'] . '</td>';
             echo'<td>' . $row['description'] . '</td>';
-            echo '<td> <a href="edit.php?projectsNR=' . $row['projectsNR'] . '&customerNR=' . $_GET['customerNR'] . '"><img src="bewerken.png"></a></td>';
-            echo '<td> <a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '"><img src="verwijderen.png"></a></td></tr>';
+            echo '<td> <a href="edit.php?projectsNR=' . $row['projectsNR'] . '&customerNR=' . $_GET['customerNR'] . '"><img src="img/bewerken.png"></a></td>';
+            echo '<td> <a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '"><img src="img/verwijderen.png"></a></td></tr>';
             echo '</tr>';
 
           }

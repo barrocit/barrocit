@@ -48,7 +48,7 @@ if ( isset($_GET['id']) )
           while ($row = mysqli_fetch_assoc($query)){
 
             echo '<tr><td>' . $row['description'] . '</td>';
-            echo '<td> <a href="#"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a> </td></tr>';
+            echo '<td> <a href="#"><img src="http://localhost/GitHub/barrocit/app/development/vink.png"></a> </td></tr>';
           }
         ?> 
     </tbody>
@@ -60,8 +60,8 @@ if ( isset($_GET['id']) )
   					<thead>
 					    <tr>
 					      <th width="30" align="left">#</th>
-					      <th width="80" align="left">Naam</th>
-					      <th width="110" align="left">Rol</th>
+					      <th width="80" align="left">Name</th>
+					      <th width="110" align="left">Userrole</th>
 					      <th width="25" align="left"></th>
 					      <th width="25" align="left"></th>
 					    </tr>

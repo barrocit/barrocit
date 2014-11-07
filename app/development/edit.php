@@ -49,24 +49,56 @@ if (isset($_POST['submit'])) {
 
 <div class="navbar navbar-default">
   <div class="navbar-header">
-    <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="deactivatedprojects.php">Deactivated projects</a>
-    <a class="navbar-brand" href="logout.php">Log out</a>
+    <a class="navbar-brand">Development</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Index</a></li>
+      <li><a href="javascript:javascript:history.go(-1)">Projects</a></li>
+      <li class="active"><a href="#">Edit Project</a></li>
+      <li><a href="deactivatedprojects.php">Deactivated Projects</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
+    </ul>
   </div>
 </div>
 
-<form action="" method="POST">
-				<label for="maintenanceContract" class="">Maintenance contract:</label><br>
-        			<input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="1">Yes
-       				<input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="0">No
-                <div class="width-tabel"><label for="software">Software:</label></div>
-				<input type="text" class="form-control" name="software" id="software" value="<?php echo $row['software'] ?>">
-                <div class="width-tabel"><label for="hardware">Hardware:</label></div>
-				<input type="text" class="form-control" name="hardware" id="hardware" value="<?php echo $row['hardware'] ?>">
-                <div class="width-tabel"><label for="description">Description:</label></div>
-				<input type="text" class="form-control" name="description" id="description" value="<?php echo $row ['description'] ?>"><br>
-				<input name="submit" type="submit" value="Update customer" id="button">
-			</form>
+<div class="page-header"><h2>Edit Project</h2></div>
+
+<form action="" method="POST" class="form-horizontal">
+<div class="form-group">
+            <label for="maintenanceContract" class="col-lg-2 control-label">Maintenance Contract</label>
+          <div class="col-lg-10">
+        <input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="1"> Yes</input><br>
+       	<input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="0"> No</input>
+      </div>
+   </div>
+        <div class="form-group">
+            <label for="software" class="col-lg-2 control-label">Software</label>
+          <div class="col-lg-10">
+        <input type="date" class="form-control" id="software" name="software" value="<?php echo $row['software'] ?>" required>
+      </div>
+   </div>
+        <div class="form-group">
+            <label for="hardware" class="col-lg-2 control-label">Hardware</label>
+          <div class="col-lg-10">
+        <input type="text" class="form-control" id="hardware" name="hardware" value="<?php echo $row['hardware'] ?>" required>
+      </div>
+   </div>
+      <div class="form-group">
+            <label for="description" class="col-lg-2 control-label">Description</label>
+          <div class="col-lg-10">
+        <input type="text" class="form-control" id="description" name="description" value="<?php echo $row['description'] ?>" required>
+      </div>
+   </div>
+      <div class="form-group">
+            <label for="editProject" class="col-lg-2 control-label"></label>
+          <div class="col-lg-10">
+        <input  name="submit" type="submit" value="Edit Project">
+      </div>
+   </div>
+</form>
 
 
 </body>

@@ -47,14 +47,16 @@
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
       <li><a href="index.php">Index</a></li>
-      <li class="active"><a href="#">Projects</a></li>
-      <li><a href="deactivatedprojects.php">Deactivated Projects</a></li>
+      <li class="active"><a href="projects.php?customerNR=<?php echo $_GET['customerNR']; ?>">Projects</a></li>
+      <li><a href="deactivatedprojects.php?customerNR=<?php echo $_GET['customerNR']; ?>">Deactivated Projects</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
     </ul>
   </div>
 </div>
+
+<div class="page-header"><h2>Projects</h2></div>
 
 <table class="table table-striped table-hover ">
 	<thead>
@@ -69,7 +71,7 @@
 	</thead>	
 <tbody>
         <?php
-          $sql = "SELECT * FROM projects WHERE customerNR = '$customerNR'";
+          $sql = "SELECT * FROM projects WHERE customerNR = '$customerNR' AND active=0";
           $query = mysqli_query($con, $sql);
           
           while ($row = mysqli_fetch_assoc($query)){
@@ -89,7 +91,7 @@
 </table> 
 
 <form action"#" method="POST" class="form-horizontal">
-      <legend>Add project:</legend>
+      <div class="page-header"><h2>Add Project</h2></div>
         <div class="form-group">
            <label for="maintenanceContract" class="col-lg-2 control-label">Maintenance contract</label>
           <div class="col-lg-10">
@@ -100,19 +102,19 @@
         <div class="form-group">
             <label for="software" class="col-lg-2 control-label">Software</label>
           <div class="col-lg-10">
-        <input type="text" class="form-control" id="software" name="software">
+        <input type="text" class="form-control" id="software" name="software" required>
       </div>
    </div>
         <div class="form-group">
             <label for="hardware" class="col-lg-2 control-label">Hardware</label>
           <div class="col-lg-10">
-        <input type="text" class="form-control" id="hardware" name="hardware">
+        <input type="text" class="form-control" id="hardware" name="hardware" required>
       </div>
    </div>
         <div class="form-group">
             <label for="description" class="col-lg-2 control-label">Description</label>
           <div class="col-lg-10">
-        <input type="text" class="form-control" id="description" name="description">
+        <input type="text" class="form-control" id="description" name="description" required>
       </div>
    </div>
     <div class="form-group">

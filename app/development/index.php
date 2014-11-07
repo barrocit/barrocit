@@ -25,13 +25,14 @@
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
       <li class="active"><a href="index.php">Index</a></li>
-      <li><a href="deactivatedprojects.php">Deactivated Projects</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
     </ul>
   </div>
 </div>
+
+<div class="page-header"><h2>Customers</h2></div>
 
 <table class="table table-striped table-hover ">
     <thead>

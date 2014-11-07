@@ -43,6 +43,7 @@
 <div class="navbar navbar-default">
 	<div class="navbar-header">
     <a class="navbar-brand" href="index.php">Home</a>
+    <a class="navbar-brand" href="deactivatedprojects.php">Deactivated projects</a>
     <a class="navbar-brand" href="logout.php">Log out</a>
 	</div>
 </div>

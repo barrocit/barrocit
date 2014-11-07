@@ -67,7 +67,8 @@
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
       <li><a href="index.php">Index</a></li>
-      <li class="active"><a href="#">Edit Customer</a></li>
+      <li><a href="dacustomers.php">Deactivated Customers</a></li>
+      <li class="active"><a href="klant-bewerken.php?id=<?php echo $row['customerNR']; ?>">Edit Customer</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>

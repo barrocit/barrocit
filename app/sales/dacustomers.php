@@ -20,8 +20,8 @@
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="index.php">Index</a></li>
-      <li><a href="dacustomers.php">Deactivated Customers</a></li>
+      <li><a href="index.php">Index</a></li>
+      <li class="active"><a href="dacustomers.php">Deactivated Customers</a></li>
       <li><a href="klant-aanmaken.php">Add Customer</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -55,11 +55,10 @@
                             <td class="col-sm-2"><strong>Residence</strong></td>
                             <td class="col-sm-2"><strong>E-mail</strong></td>        
                             <td class="col-sm-1"><strong>Prospect</strong></td>
-                            <td class="col-sm-1"><strong>Edit</strong></td>  
-                            <td class="col-sm-1"><strong>Deactivate</strong></td>  
+                            <td class="col-sm-1"><strong>Activate</strong></td>  
                         </tr>
                 <?php       
-                     $sql = "SELECT * FROM customer WHERE active = 0";
+                     $sql = "SELECT * FROM customer WHERE active = 1";
                      $query = mysqli_query($con, $sql);
           
 
@@ -79,8 +78,8 @@
                         echo "Nee";
                     }
 
-                     echo '</td><td> <a href="klant-bewerken.php?id=' . $row['customerNR'] .'"><img                                             src="http://localhost/GitHub/barrocit/app/development/bewerken.png"></a>' . '</td>';
-                     echo '<td> <a href="deactivate.php?id=' . $row['customerNR'] .'"><img src="http://localhost/GitHub/barrocit/app/development/verwijderen.png"></a>' . '</td></tr>';
+                  
+                     echo '<td> <a href="activate.php?id=' . $row['customerNR'] .'"><img src="http://localhost/GitHub/barrocit/app/development/vink.png"></a>' . '</td></tr>';
                 }
 
                 ?>

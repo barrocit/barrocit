@@ -38,7 +38,8 @@
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
       <li><a href="index.php">Index</a></li>
-      <li class="active"><a href="#">Customerdata</a></li>
+      <li><a href="dacustomers.php">Deactivated Customers</a></li>
+      <li class="active"><a href="klant-inzien.php?id=<?php echo $row['customerNR']; ?>">Customerdata</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
@@ -50,7 +51,10 @@
 
 <div class="panel panel-warning">
   <div class="panel-heading">
-    <h3 class="panel-title">Customerdata <?php echo $row['customerNR']; ?></h3>
+    <h3 class="panel-title">Customerdata <?php echo $row['customerNR']; ?> <?php if( $row['active'] == 1)
+                    {
+                        echo "<strong>(NOT ACTIVATED)</strong>";
+                    }?></h3>
   </div>
   <div class="panel-body">
 <table>

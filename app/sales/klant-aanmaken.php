@@ -107,7 +107,7 @@
       </div>
    </div>
 		<div class="form-group">
-            <label for="companyName" class="col-lg-2 control-label"></label>
+            <label for="createCustomer" class="col-lg-2 control-label"></label>
           <div class="col-lg-10">
         <input  name="createCustomer" type="submit" value="Create Customer">
       </div>

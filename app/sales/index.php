@@ -49,6 +49,12 @@
     echo '<div class="alert alert-dismissable alert-success">' . htmlspecialchars($_GET['msg']) . '</div>' ;
     }
     ?>
+    <?php  
+    // succes of fail message
+    if (isset($_GET['fout'])) {
+    echo '<div class="alert alert-dismissable alert-danger">' . htmlspecialchars($_GET['fout']) . '</div>' ;
+    }
+    ?>
 
     <div class="page-header"><h2>Customers</h2></div>
 
@@ -62,8 +68,8 @@
                             <td class="col-sm-2"><strong>Residence</strong></td>
                             <td class="col-sm-2"><strong>E-mail</strong></td>        
                             <td class="col-sm-1"><strong>Prospect</strong></td>
-                            <td class="col-sm-1"><strong>Bewerken</strong></td>  
-                            <td class="col-sm-1"><strong>Verwijderen</strong></td>  
+                            <td class="col-sm-1"><strong>Edit</strong></td>  
+                            <td class="col-sm-1"><strong>Deactivate</strong></td>  
                         </tr>
                 <?php       
                      $sql = "SELECT * FROM customer";
@@ -71,7 +77,7 @@
           
 
                      while ($row = mysqli_fetch_assoc($query)){
-                     echo '<tr><td><img src="http://localhost/GitHub/barrocit/app/development/search.png"></td>';
+                     echo '<tr><td><a href="klant-inzien.php?id=' . $row['customerNR'] .'"><img src="http://localhost/GitHub/barrocit/app/development/search.png"></a></td>';
                      echo '<td>' . $row['companyName'] . '</td>';
                      echo '<td>' . $row['address'] . '</td>';
                      echo '<td>' . $row['zipCode'] . '</td>';

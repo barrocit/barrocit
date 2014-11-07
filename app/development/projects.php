@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../bootstrap/bootstrapStyle.css">
-	<title>development</title>
+	<title>Barroc-IT ~ Development</title>
 </head>
 <?php
 
@@ -41,11 +41,19 @@
 <img src="../images/menuBarrocit.png" width="1140" height= "400px;"/>
 
 <div class="navbar navbar-default">
-	<div class="navbar-header">
-    <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="deactivatedprojects.php">Deactivated projects</a>
-    <a class="navbar-brand" href="logout.php">Log out</a>
-	</div>
+  <div class="navbar-header">
+    <a class="navbar-brand">Development</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Index</a></li>
+      <li class="active"><a href="#">Projects</a></li>
+      <li><a href="deactivatedprojects.php">Deactivated Projects</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
+    </ul>
+  </div>
 </div>
 
 <table class="table table-striped table-hover ">
@@ -85,8 +93,8 @@
         <div class="form-group">
            <label for="maintenanceContract" class="col-lg-2 control-label">Maintenance contract</label>
           <div class="col-lg-10">
-        <input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="1">Yes
-        <input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="0">No
+        <input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="1"> Yes</input><br>
+        <input type="radio" class="" id="maintenanceContract" name="maintenanceContract" value="0"> No</input>
       </div>
    </div>
         <div class="form-group">
@@ -107,7 +115,13 @@
         <input type="text" class="form-control" id="description" name="description">
       </div>
    </div>
-<input  name="submit" type="submit" value="Add">
+    <div class="form-group">
+            <label for="description" class="col-lg-2 control-label"></label>
+          <div class="col-lg-10">
+        <input  name="submit" type="submit" value="Add Project">
+      </div>
+   </div>
+
 
 </form>
 

@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../bootstrap/bootstrapStyle.css">
-	<title>development</title>
+	<title>Barroc-IT ~ Development</title>
 </head>
 
 <body>
@@ -20,25 +20,30 @@
 
 <div class="navbar navbar-default">
   <div class="navbar-header">
-    <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="deactivatedprojects.php">Deactivated projects</a>
-    <a class="navbar-brand" href="logout.php">Logout</a>
-
+    <a class="navbar-brand">Development</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.php">Index</a></li>
+      <li><a href="deactivatedprojects.php">Deactivated Projects</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
+    </ul>
   </div>
 </div>
 
 <table class="table table-striped table-hover ">
     <thead>
       <tr>
-        <th>Company name</th>
-        <th>Contact person</th>
+        <th>Company Name</th>
+        <th>Contact Person</th>
         <th>Address</th>
         <th>Zip code</th>
         <th>Residence</th>
         <th>Telephone number</th>
         <th>Fax number</th>
         <th>Email</th>
-        <th>Open projects</th>
         <th>See projects</th>
       </tr>
     </thead>
@@ -58,7 +63,6 @@
             echo '<td>' . $row['telephoneNumber'] . '</a></td>';
             echo '<td>' . $row['faxNumber'] . '</a></td>';
             echo '<td><a href="mailto:">' . $row['email'] . '</a></td>';
-            echo '<td>' . $row['openProjects'] . '</a></td>';
             echo '<td><a href="projects.php?customerNR=' . $row['customerNR'] . '"><img src="img/search.png"> </a></td>';
           }
         ?>   

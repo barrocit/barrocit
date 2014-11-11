@@ -47,8 +47,8 @@
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
       <li><a href="index.php">Index</a></li>
-      <li class="active"><a href="projects.php?customerNR=<?php echo $_GET['customerNR']; ?>">Projects</a></li>
-      <li><a href="deactivatedprojects.php?customerNR=<?php echo $_GET['customerNR']; ?>">Deactivated Projects</a></li>
+      <li><a href="projects.php?customerNR=<?php echo $_GET['customerNR']; ?>">Projects</a></li>
+      <li class="active"><a href="deactivatedprojects.php?customerNR=<?php echo $_GET['customerNR']; ?>">Deactivated Projects</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
@@ -65,8 +65,7 @@
 			<th>Software</th>
 			<th>Hardware</th>
 			<th>Description</th>
-      <th>Edit</th>
-			<th>Deactivate</th>
+			<th>Activate</th>
 		</tr>
 	</thead>	
 <tbody>
@@ -81,8 +80,7 @@
             echo'<td>' . $row['software'] . '</td>';
             echo'<td>' . $row['hardware'] . '</td>';
             echo'<td>' . $row['description'] . '</td>';
-            echo '<td> <a href="edit.php?projectsNR=' . $row['projectsNR'] . '&customerNR=' . $_GET['customerNR'] . '"><img src="img/bewerken.png"></a></td>';
-            echo '<td> <a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '"><img src="img/verwijderen.png"></a></td></tr>';
+            echo '<td> <a href="activate.php?id=' . $row['projectsNR'] . '"><img src="vink.png"></a></td></tr>';
             echo '</tr>';
 
           }

@@ -82,7 +82,7 @@
             echo'<td>' . $row['hardware'] . '</td>';
             echo'<td>' . $row['description'] . '</td>';
             echo '<td> <a href="edit.php?projectsNR=' . $row['projectsNR'] . '&customerNR=' . $_GET['customerNR'] . '"><img src="img/bewerken.png"></a></td>';
-            echo '<td> <a href="deactivate.php?projectsNR=' . $row['projectsNR'] . '"><img src="img/verwijderen.png"></a></td></tr>';
+            echo '<td> <a href="deactivate.php?id=' . $row['projectsNR'] . '"><img src="img/verwijderen.png"></a></td></tr>';
             echo '</tr>';
 
           }

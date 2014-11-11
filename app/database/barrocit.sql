@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 30 okt 2014 om 09:55
+-- Genereertijd: 11 nov 2014 om 11:06
 -- Serverversie: 5.6.12-log
 -- PHP-versie: 5.4.12
 
@@ -47,41 +47,37 @@ CREATE TABLE IF NOT EXISTS `appointments` (
 
 CREATE TABLE IF NOT EXISTS `customer` (
   `customerNR` int(11) NOT NULL AUTO_INCREMENT,
-  `companyName` varchar(30) COLLATE latin1_bin NOT NULL,
-  `address` varchar(40) COLLATE latin1_bin NOT NULL,
-  `zipCode` varchar(7) COLLATE latin1_bin NOT NULL,
-  `residence` varchar(30) COLLATE latin1_bin NOT NULL,
-  `telephoneNumber` int(10) NOT NULL,
-  `faxNumber` int(10) NOT NULL,
-  `email` varchar(40) COLLATE latin1_bin NOT NULL,
-  `invoicesNumber` int(5) NOT NULL,
-  `openProjects` int(5) NOT NULL,
-  `appointments` varchar(30) COLLATE latin1_bin NOT NULL,
-  `internalContact` text COLLATE latin1_bin NOT NULL,
-  `dateAction` date NOT NULL,
+  `companyName` varchar(30) COLLATE latin1_bin NOT NULL DEFAULT '-',
+  `address` varchar(40) COLLATE latin1_bin NOT NULL DEFAULT '-',
+  `zipCode` varchar(7) COLLATE latin1_bin NOT NULL DEFAULT '-',
+  `residence` varchar(30) COLLATE latin1_bin NOT NULL DEFAULT '-',
+  `telephoneNumber` varchar(20) COLLATE latin1_bin NOT NULL DEFAULT '-',
+  `faxNumber` varchar(10) COLLATE latin1_bin NOT NULL DEFAULT '-',
+  `email` varchar(40) COLLATE latin1_bin NOT NULL DEFAULT '-',
+  `appointments` varchar(30) COLLATE latin1_bin NOT NULL DEFAULT '-',
   `lastcontactDate` date NOT NULL,
-  `nextAction` date NOT NULL,
-  `contactPerson` text COLLATE latin1_bin NOT NULL,
-  `btwCode` int(15) NOT NULL,
-  `salesAmount` double NOT NULL,
-  `balance` double NOT NULL,
-  `credit` int(6) NOT NULL,
-  `limit` int(10) NOT NULL,
-  `grootboekrekeningNR` varchar(15) COLLATE latin1_bin NOT NULL,
-  `offerStatus` varchar(40) COLLATE latin1_bin NOT NULL,
-  `prospect` varchar(40) COLLATE latin1_bin NOT NULL,
-  `bkrControle` tinyint(4) NOT NULL,
-  PRIMARY KEY (`customerNR`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_bin AUTO_INCREMENT=104 ;
+  `contactPerson` varchar(30) COLLATE latin1_bin NOT NULL DEFAULT '-',
+  `prospect` int(11) NOT NULL DEFAULT '0',
+  `active` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`customerNR`),
+  FULLTEXT KEY `companyName` (`companyName`),
+  FULLTEXT KEY `companyName_2` (`companyName`),
+  FULLTEXT KEY `companyName_3` (`companyName`),
+  FULLTEXT KEY `companyName_4` (`companyName`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_bin AUTO_INCREMENT=108 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `customer`
 --
 
-INSERT INTO `customer` (`customerNR`, `companyName`, `address`, `zipCode`, `residence`, `telephoneNumber`, `faxNumber`, `email`, `invoicesNumber`, `openProjects`, `appointments`, `internalContact`, `dateAction`, `lastcontactDate`, `nextAction`, `contactPerson`, `btwCode`, `salesAmount`, `balance`, `credit`, `limit`, `grootboekrekeningNR`, `offerStatus`, `prospect`, `bkrControle`) VALUES
-(101, 'barrocit', 'Terheijdenseweg 350', '4826 AA', 'Breda', 76733444, 0, 'radiuscollege@hotmail.com', 3, 1, '', '', '0000-00-00', '2014-10-09', '0000-00-00', 'Fer van Krimpen', 0, 0, 1500, 0, 1000, '', '', '', 0),
-(102, 'Barroc-IT', 'Terheijdenseweg 350', '5544 AA', 'Breda', 764635354, 0, 'Jesse@hotmail.com', 3, 2, '', '', '0000-00-00', '2014-10-02', '0000-00-00', 'Jesse Peffer', 53245254, 0, 3000, 0, 2500, '', '', '', 0),
-(103, 'Barroc-IT', 'Terheijdensweg 350', '4455 AB', 'Breedjeda', 683937583, 0, 'nick@hotmail.com', 4, 1, '', '', '0000-00-00', '2014-10-11', '0000-00-00', 'Nick de Koning', 543663324, 2000, 4000, 0, 1750, '5345363', '', '', 0);
+INSERT INTO `customer` (`customerNR`, `companyName`, `address`, `zipCode`, `residence`, `telephoneNumber`, `faxNumber`, `email`, `appointments`, `lastcontactDate`, `contactPerson`, `prospect`, `active`) VALUES
+(101, 'barrocithsdgkj', 'Terheijdenseweg 350', '4826 AA', 'Breda', '76733444', '13123', 'radiuscollege@hotmail.com', 'gkjdrjghdk', '2014-10-24', 'Fer van Krimpen', 1, 1),
+(102, 'Barroc-ITjesse', 'Terheijdenseweg 350', '5544 AA', 'Breda', '764635354', '0', 'Jesse@hotmail.com', '', '2014-10-02', 'Jesse Peffer', 0, 1),
+(103, 'Barroc-IT', 'Terheijdensweg 350', '4455 AB', 'Breedjeda', '683937583', '0', 'nick@hotmail.com', '', '2014-10-11', 'Nick de Koning', 0, 1),
+(104, 'test1', 'test2', 'test3', 'test4', '6060606', '20202', 'test@test.nl', 'testen', '2014-11-18', 'de moeder van rian', 0, 0),
+(105, 'nac', 'nac', 'nac', 'nac', '07654972166666666666', '0', 'ajax@aja', 'nac', '0002-11-21', 'Ji-hjad', 0, 0),
+(106, 'ajax', 'ajax', 'ajax', 'ajax', '0', '0', 'ajax@ajax.nl', 'ajaxx', '2014-11-21', 'ajacied', 0, 0),
+(107, 'dsgdfs', 'gdfgdsfgdsf', 'gddfg', 'dsfgdsfgsd', '0', '0', 'dfgdssgdsf', 'gsdfgdsfgsdfg', '2014-11-21', 'dsgdffgfg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -92,11 +88,36 @@ INSERT INTO `customer` (`customerNR`, `companyName`, `address`, `zipCode`, `resi
 CREATE TABLE IF NOT EXISTS `invoices` (
   `invoicesNR` int(11) NOT NULL AUTO_INCREMENT,
   `projectsNR` int(10) NOT NULL,
-  `date` date NOT NULL,
-  `amount` int(10) NOT NULL,
+  `description` text NOT NULL,
+  `datum` date NOT NULL,
+  `price` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `quantity` int(11) NOT NULL DEFAULT '1',
+  `btw` decimal(10,2) NOT NULL DEFAULT '1.21',
+  `active` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`invoicesNR`),
   KEY `projectsNR` (`projectsNR`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3261 ;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `invoices`
+--
+
+INSERT INTO `invoices` (`invoicesNR`, `projectsNR`, `description`, `datum`, `price`, `quantity`, `btw`, `active`) VALUES
+(1, 49, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 1),
+(2, 50, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 0),
+(11, 49, 'kutkakkerlak', '2014-11-26', '0.00', 10, '1.21', 1),
+(3245, 49, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 1),
+(3247, 49, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 1),
+(3248, 49, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 1),
+(3249, 49, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 1),
+(3253, 49, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 1),
+(3254, 49, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 1),
+(3255, 49, 'jesse', '2014-11-21', '40.00', 3, '1.21', 1),
+(3256, 49, 'ajaxied', '2014-11-26', '100.00', 10, '1.21', 0),
+(3257, 49, 'ajaxied', '2014-11-26', '0.00', 10, '1.21', 1),
+(3258, 49, 'remmert', '2014-11-13', '10.00', 10, '1.21', 0),
+(3259, 49, 'bondje', '0011-04-09', '0.00', 1, '1.21', 0),
+(3260, 49, 'dfgdr', '0004-04-07', '0.00', 1, '1.21', 0);
 
 -- --------------------------------------------------------
 
@@ -111,19 +132,20 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `software` varchar(50) NOT NULL,
   `hardware` varchar(50) NOT NULL,
   `description` varchar(75) NOT NULL,
+  `active` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`projectsNR`),
   KEY `customerNR` (`customerNR`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `projects`
 --
 
-INSERT INTO `projects` (`projectsNR`, `customerNR`, `maintenanceContract`, `software`, `hardware`, `description`) VALUES
-(49, 101, 0, 'Google chrome, Wamp server & Sublime text 2', 'Laptop', 'Finance application for BarrocIT. Contactperson: Fer v Krimpen'),
-(50, 102, 1, 'Notepad ++, Wamp server & Google chrome', 'Laptop', 'A application for the administration'),
-(51, 102, 1, 'Sublime text 2, Wamp server & Mozilla firefox', 'Laptop', 'Finance application'),
-(52, 103, 0, 'Sublime text 2, Wamp server & Google chrome', 'Laptop', 'A application for the administration');
+INSERT INTO `projects` (`projectsNR`, `customerNR`, `maintenanceContract`, `software`, `hardware`, `description`, `active`) VALUES
+(49, 101, 0, '2014-11-19', 'Laptop', 'Finance application for BarrocIT. Contactperson: Fer v Krimpen', 0),
+(50, 102, 1, 'Notepad ++, Wamp server & Google chrome', 'Laptop', 'A application for the administration', 1),
+(51, 102, 1, 'Sublime text 2, Wamp server & Mozilla firefox', 'Laptop', 'Finance application', 0),
+(52, 103, 0, 'Sublime text 2, Wamp server & Google chrome', 'Laptop', 'A application for the administration', 0);
 
 -- --------------------------------------------------------
 

@@ -32,6 +32,13 @@
   </div>
 </div>
 
+<?php  
+    // succes of fail message
+    if (isset($_GET['msg'])) {
+    echo '<div class="alert alert-dismissable alert-success">' . htmlspecialchars($_GET['msg']) . '</div>' ;
+    }
+    ?>
+
 <div class="page-header"><h2>Customers</h2></div>
 
 <table class="table table-striped table-hover ">

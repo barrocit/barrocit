@@ -1,4 +1,16 @@
 <?php session_start();
+
+
+if (! isset($_SESSION['name']) ) 
+{
+    header('location: ../error1.php');
+}
+
+if ($_SESSION ['gebruikersrol'] !='4' AND '2')
+{
+    header('location: ../error2.php');
+}
+
 include "../../config/config.php";
 
 if (isset($_GET['projectsNR'])) {

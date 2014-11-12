@@ -1,4 +1,16 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+if (! isset($_SESSION['name']) ) 
+{
+    header('location: error1.php');
+}
+
+if ($_SESSION ['gebruikersrol'] !='4')
+{
+    header('location: error2.php');
+}?>
+
+
 <?php include "../config/config.php"; ?>
 <?php $accounts = mysqli_query($con,"SELECT * FROM users"); ?>
 <?php 
@@ -12,7 +24,8 @@ if ( isset($_GET['id']) )
 				echo 'delete query is niet goed gegaan';
 				die();
 			}
-			header('location: index.php');
+
+			header('location: admin.php');
 		}
 ?>
 <!DOCTYPE html>
@@ -48,7 +61,7 @@ if ( isset($_GET['id']) )
           while ($row = mysqli_fetch_assoc($query)){
 
             echo '<tr><td>' . $row['description'] . '</td>';
-            echo '<td> <a href="#"><img src="http://localhost/GitHub/barrocit/app/development/vink.png"></a> </td></tr>';
+            echo '<td> <a href="activate.php?id=' . $row['invoicesNR'] . '"><img src="http://localhost/GitHub/barrocit/app/development/vink.png"></a> </td></tr>';
           }
         ?> 
     </tbody>

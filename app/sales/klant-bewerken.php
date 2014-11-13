@@ -5,7 +5,7 @@ if (! isset($_SESSION['name']) )
     header('location: ../error1.php');
 }
 
-if ($_SESSION ['gebruikersrol'] !='4' AND '3')
+if ($_SESSION ['gebruikersrol'] !='3' && $_SESSION ['gebruikersrol'] != '4')
 {
     header('location: ../error2.php');
 }
@@ -82,6 +82,11 @@ if ($_SESSION ['gebruikersrol'] !='4' AND '3')
       <li class="active"><a href="klant-bewerken.php?id=<?php echo $row['customerNR']; ?>">Edit Customer</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <?php
+      if ($_SESSION ['gebruikersrol'] !='4')
+      {}else {
+      echo'<li><a href="../admin.php">Admin</a></li>';
+      }?>
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
     </ul>
   </div>
@@ -155,8 +160,8 @@ if ($_SESSION ['gebruikersrol'] !='4' AND '3')
             <label for="prospect" class="col-lg-2 control-label">Prospect*</label>
           <div class="col-lg-10">
         <select class="form-control" id="prospect" name="prospect" required>
-			<option value="0">Ja</option>
-			<option value="1">Nee</option>
+			<option value="0">Yes</option>
+			<option value="1">No</option>
         </select>
       </div>
    </div>

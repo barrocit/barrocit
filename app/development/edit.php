@@ -6,7 +6,7 @@ if (! isset($_SESSION['name']) )
     header('location: ../error1.php');
 }
 
-if ($_SESSION ['gebruikersrol'] !='4' AND '2')
+if ($_SESSION ['gebruikersrol'] !='2' && $_SESSION ['gebruikersrol'] != '4')
 {
     header('location: ../error2.php');
 }
@@ -68,9 +68,13 @@ if (isset($_POST['submit'])) {
       <li><a href="index.php">Index</a></li>
       <li><a href="javascript:javascript:history.go(-1)">Projects</a></li>
       <li class="active"><a href="#">Edit Project</a></li>
-      <li><a href="deactivatedprojects.php">Deactivated Projects</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <?php
+      if ($_SESSION ['gebruikersrol'] !='4')
+      {}else {
+      echo'<li><a href="../admin.php">Admin</a></li>';
+      }?>
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
     </ul>
   </div>

@@ -5,7 +5,7 @@ if (! isset($_SESSION['name']) )
     header('location: ../error1.php');
 }
 
-if ($_SESSION ['gebruikersrol'] !='4' AND '3')
+if ($_SESSION ['gebruikersrol'] !='3' && $_SESSION ['gebruikersrol'] != '4')
 {
     header('location: ../error2.php');
 }
@@ -53,6 +53,11 @@ if ($_SESSION ['gebruikersrol'] !='4' AND '3')
       <li class="active"><a href="klant-inzien.php?id=<?php echo $row['customerNR']; ?>">Customerdata</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <?php
+      if ($_SESSION ['gebruikersrol'] !='4')
+      {}else {
+      echo'<li><a href="../admin.php">Admin</a></li>';
+      }?>
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
     </ul>
   </div>
@@ -113,11 +118,11 @@ if ($_SESSION ['gebruikersrol'] !='4' AND '3')
       <th>Prospect</th>
       <td><?php if( $row['prospect'] == 0)
                     {
-                        echo "Ja";
+                        echo "Yes";
                     }
                     if( $row['prospect'] == 1)
                     {
-                        echo "Nee";
+                        echo "No";
                     } ?></td>
     </tr>
 </table> 

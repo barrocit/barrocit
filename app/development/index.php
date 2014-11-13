@@ -4,7 +4,7 @@ if (! isset($_SESSION['name']) )
     header('location: ../error1.php');
 }
 
-if ($_SESSION ['gebruikersrol'] !='4' AND '2')
+if ($_SESSION ['gebruikersrol'] !='2' && $_SESSION ['gebruikersrol'] != '4')
 {
     header('location: ../error2.php');
 }?>
@@ -36,6 +36,11 @@ if ($_SESSION ['gebruikersrol'] !='4' AND '2')
       <li class="active"><a href="index.php">Index</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <?php
+      if ($_SESSION ['gebruikersrol'] !='4')
+      {}else {
+      echo'<li><a href="../admin.php">Admin</a></li>';
+      }?>
       <li><a href="http://localhost/GitHub/barrocit/app/development/logout.php">Log-out</a></li>
     </ul>
   </div>
@@ -67,7 +72,7 @@ if ($_SESSION ['gebruikersrol'] !='4' AND '2')
 
     <tbody>
         <?php
-          $sql = "SELECT * FROM customer";
+          $sql = "SELECT * FROM customer WHERE active = 0";
           $query = mysqli_query($con, $sql);
           
 

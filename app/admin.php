@@ -42,7 +42,8 @@ if ( isset($_GET['id']) )
 				<h2>Departments</h2>
 				- <a href="development">Development</a><br>
 				- <a href="sales">Sales</a><br>
-				- <a href="finance">Finance</a>
+				- <a href="finance">Finance</a><br><Br>
+				- <a href="development/logout.php">Log-out</a>
 			</div>
 			<div class="div2">
 				<h2>Invisible Invoices</h2>

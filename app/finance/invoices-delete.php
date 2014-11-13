@@ -5,7 +5,7 @@ if (! isset($_SESSION['name']) )
     header('location: ../error1.php');
 }
 
-if ($_SESSION ['gebruikersrol'] !='4' AND '1')
+if ($_SESSION ['gebruikersrol'] !='1' && $_SESSION ['gebruikersrol'] != '4')
 {
     header('location: ../error2.php');
 }
